@@ -20,54 +20,57 @@ SOLIDはオブジェクト指向設計の5つの基本原則を表します。�
 ---
 
 ## 🚀 課題の進め方
+AkiraHouseはそれぞれの部品（B9000,S9000,D9000）を管理するスマートハウスです。  
+現在はAkiraHouseの中でそれぞれの部品がインスタンス化されているため、拡張性・保守性が低い状態です。
+
+テストを書き、SOLIDの原則を確認しながら
+
+- SmartHouseTestの１個目のテストが通るようにDIPに則ってリファクタリングしましょう
+
+- smartHouseもinterfaceで仕様を明記し、AkiraHouseはinterfaceで実装しましょう
+
+- 各testを記述し、SOLID原則を意識しながら実装を行い、テストをすべてパスさせてください
 
 このリポジトリーには、以下の内容が含まれます：
-1. 問題が書かれたコードファイル
-2. テストコード（`test`フォルダ内）
+1. [実装コード](src/main/kotlin/com/example/xpppp_for_kouhai_devs/smart_home_tdd/right)
+2. [テストコード](src/test)
+![img.png](img.png)
 
-各問題に対して、SOLID原則を意識しながら実装を行い、テストをすべてパスさせてください。
 
 ### 📂 ディレクトリ構造
-srcの中に今回のhandOnで使用するファイルがあります
 ```
 ├── src/  ソースコード 
-   │ 
-   ├── main/  メインコード 
-   │   │ 
-   │   └── kotlin/ 
-   │        │
-   │        └── com.example.xpppp_for_kouhai_code/ 
-   │            │
-   │            ├── dip/ # 依存関係逆転の原則関連 
-   │            │
-   │            └── smart_home_tdd/ 
-   │                │ 
-   │                ├── right/ # 正しい実装例 
-   │                │   ├── AkiraHouse.kt 
-   │                │   ├── B9000.kt
-   │                │   ├── BulbTimerImpl.kt
-   │                │   ├── D9000.kt
-   │                │   ├── Main.kt
-   │                │   └── S9000.kt 
-   │                │
-   │                └── wrong/ # 違反例 
-   │                    ├── AkiraHouse.kt 
-   │                    ├── B9000.kt 
-   │                    ├── D9000.kt 
-   │                    ├── Main.kt 
-   │                    └── S9000.kt 
-   └── test/  テストコード 
+ │ 
+ ├── main/  メインコード 
+ │   │ 
+ │   └── kotlin/ 
+ │        │
+ │        └── com.example.xpppp_for_kouhai_code/ 
+ │            │
+ │            ├── dip/ # 依存関係逆転の原則関連 
+ │            │
+ │            └── smart_home_tdd/ 
+ │                │ 
+ │                ├── right/  実装ファイル
+ │                │   ├── AkiraHouse.kt  スマートほーみゅ
+ │                │   ├── B9000.kt  照明
+ │                │   ├── D9000.kt  スマートホームディスプレイ
+ │                │   ├── Main.kt
+ │                │   └── S9000.kt  スイッチ
+ │                │
+ │                └── wrong/ # 違反例 
+ │                    ├── AkiraHouse.kt 
+ │                    ├── B9000.kt 
+ │                    ├── D9000.kt 
+ │                    ├── Main.kt 
+ │                    └── S9000.kt 
+ └── test/  テストコード 
         │
         └── kotlin/ 
            │ 
-           └── com.example.xpppp_for_kouhai_code/ 
-                ├── S9000Test.kt 
+           └── com.example.xpppp_for_kouhai_devs.smart_home_tdd 
                 ├── SmartHomeTest.kt 
-                ├── SpyBulb.kt 
-                ├── SpyInfoDisplay.kt 
-                ├── SpySwitch.kt 
-                ├── StubBulb.kt
-                └── StubSwitch.kt 
+                └── SwitchTest.kt 
 ```
 
 ## 💻 環境構築と実行方法
@@ -79,7 +82,7 @@ srcの中に今回のhandOnで使用するファイルがあります
 
 2. 依存関係をインストール：
    ```bash
-    ./gradlew build
+    ./gradlew dependencies
 
 3. テストの実行：
    ```bash
