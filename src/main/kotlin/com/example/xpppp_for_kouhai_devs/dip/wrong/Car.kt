@@ -5,12 +5,12 @@ class Car() {
     private val wheel: NormalWheel = NormalWheel()
     fun drive(): String {
         val wheelStatus = wheel.rotate()
-        return "$wheelStatus\n車が走ります!!"
+        return "${wheelStatus}の車が走ります!!"
     }
 
     fun back(): String {
         val wheelStatus = wheel.rotate()
-        return "$wheelStatus\n車がバックします!!"
+        return "${wheelStatus}の車がバックします!!"
     }
 }
 fun main () {
@@ -23,18 +23,17 @@ fun main () {
 //他の種類のホイールを使用するにはCarクラスを変更しなければならない
 
 
-
 //↓OptionWheelに変えた場合
+
 //class Car() {
 //    private val wheel: OptionWheel = OptionWheel()
 //    fun drive(): String {
-//        val wheelStatus = wheel.rotateHighSpeed()
-//        return "$wheelStatus\n車が走ります!!"
+//        val wheelStatus = wheel.rotate()
+//        return "${wheelStatus}の車が走ります!!"
 //    }
 //
 //    fun back(): String {
-//        val wheelStatus = wheel.rotateHighSpeed()
-//        return "$wheelStatus\n車がバックします!!"
+//        val wheelStatus = wheel.rotate()
+//        return "${wheelStatus}の車がバックします!!"
 //    }
 //}
-

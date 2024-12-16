@@ -2,11 +2,11 @@ package DIP.Wrong
 
 class NormalWheel {
     fun rotate(): String {
-        return "ノーマルホイールが回転します！"
+        return "ノーマルホイール"
     }
 }
 class OptionWheel {
-    fun rotateHighSpeed(): String {
-        return "オプションホイールが超高速回転します！"
+    fun rotate(): String {
+        return "オプションホイール"
     }
 }
